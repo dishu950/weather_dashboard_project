@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search current weather conditions for cities around the world.">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="page-header">
+      <p class="eyebrow">LIVE WEATHER</p>
+      <h1>Weather Dashboard</h1>
+      <p class="subtitle">Find current weather conditions anywhere in the world.</p>
+    </header>
+
+    <form class="search" id="searchForm">
+      <label class="sr-only" for="cityInput">City name</label>
+      <input id="cityInput" type="text" placeholder="Search for a city..." autocomplete="off" required>
+      <button id="searchBtn" type="submit">Search</button>
+    </form>
+
+    <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+
+    <section id="weatherCard" class="weather-card" aria-label="Current weather" hidden>
+      <div class="location-row">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">—</h2>
+          <p id="updatedAt" class="muted">—</p>
+        </div>
+        <div id="weatherIcon" class="weather-icon" aria-hidden="true">☀️</div>
+      </div>
+
+      <div class="temperature-row">
+        <p id="temperature" class="temperature">—°</p>
+        <div>
+          <p id="weatherDescription" class="condition">—</p>
+          <p id="feelsLike" class="muted">Feels like —°C</p>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <article class="metric">
+          <span class="metric-icon" aria-hidden="true">💧</span>
+          <div><p class="metric-label">Humidity</p><p id="humidity" class="metric-value">—%</p></div>
+        </article>
+        <article class="metric">
+          <span class="metric-icon" aria-hidden="true">💨</span>
+          <div><p class="metric-label">Wind speed</p><p id="windSpeed" class="metric-value">— km/h</p></div>
+        </article>
+        <article class="metric">
+          <span class="metric-icon" aria-hidden="true">🌡️</span>
+          <div><p class="metric-label">Apparent temperature</p><p id="apparentTemp" class="metric-value">—°C</p></div>
+        </article>
+      </div>
+    </section>
+
+    <footer>Weather data provided by Open-Meteo</footer>
+  </main>
+</body>
+</html>
